@@ -6,11 +6,11 @@ const routes: Routes = [{
   path:'',
   component:LayoutComponent,
   children:[
-    /*{
+    {
       path:'',
-      redirectTo:'/home',
+      redirectTo:'home',
       pathMatch:'full'
-    },*/
+    },
     {
       path:'home',
       loadChildren: ()=>import('./poke-home/poke-home.module').then(m=>m.PokeHomeModule)

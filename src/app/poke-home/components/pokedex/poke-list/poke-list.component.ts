@@ -21,16 +21,19 @@ export class PokeListComponent implements OnInit {
   pageIndex:number;
   pageSize:number;
   length:number;
+  loading:boolean
   constructor(private pokeServicesService:PokeServicesService) { }
   
   ngOnInit() {
   this.getTable(0)
   }
   getTable(next:any){
+    this.loading = true
     this.pokeServicesService.getPagePokemon(next)
     .subscribe((resp:any)=>{
       this.dataTablePage = resp.results;
       this.pokemonsTotal = resp.count;
+      this.loading = false
     })
   }
   getEvent(event:PageEvent){

@@ -24,3 +24,7 @@
               (page)="pageEvent = getEvent($event)"
               >
 </mat-paginator>
+<div class="loading" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+ 
+</div>

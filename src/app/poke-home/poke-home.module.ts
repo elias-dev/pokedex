@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { PokeHomeRoutingModule } from './poke-home-routing.module';
 
-import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
-import { PokeListComponent } from './components/poke-list/poke-list.component';
-import { PokeSearchComponent } from './components/poke-search/poke-search.component';
-import { PokePagerComponent } from './components/poke-pager/poke-pager.component';
+import { PokeDetailComponent } from './components/pokedex/poke-detail/poke-detail.component';
+import { PokeListComponent } from './components/pokedex/poke-list/poke-list.component';
+import { PokeSearchComponent } from './components/pokedex/poke-search/poke-search.component';
+import { PokePagerComponent } from './components/pokedex/poke-pager/poke-pager.component';
 import { PokeHomeComponent } from './components/poke-home/poke-home.component';
 
 import { MaterialModule } from './../material/material.module';
+import { PokedexComponent } from './components/pokedex/pokedex/pokedex.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MaterialModule } from './../material/material.module';
     PokeListComponent,
     PokeSearchComponent,
     PokePagerComponent,
-    PokeHomeComponent
+    PokeHomeComponent,
+    PokedexComponent
   ],
   imports: [
     CommonModule,

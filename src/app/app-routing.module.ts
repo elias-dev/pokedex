@@ -14,7 +14,7 @@ const routes: Routes = [{
     {
       path:'home',
       loadChildren: ()=>import('./poke-home/poke-home.module').then(m=>m.PokeHomeModule)
-    }
+    },
   ]
   },
   {

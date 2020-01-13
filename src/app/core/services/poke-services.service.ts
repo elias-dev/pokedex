@@ -6,10 +6,16 @@ import { HttpClient } from '@angular/common/http';
 export class PokeServicesService {
 
   constructor(private http: HttpClient) { }
-  public getPokemon(name: string){
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+
+    public getPokemon(name: string){
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+    }
+    public getPagePokemon(offset:any){
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=10"`)
+    }
+
   }
-  public getPagePokemon(next:any){
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/?offset=${next}&limit=10"`)
-  }
-}
+
+
+
+

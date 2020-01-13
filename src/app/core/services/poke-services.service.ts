@@ -17,8 +17,10 @@ export class PokeServicesService {
       return this.http.get(`https://pokeapi.co/api/v2/type/${name}`)
     }
     public getGeneration(id: any){
-      console.log('asdasdasd')
       return this.http.get(`https://pokeapi.co/api/v2/generation/${id}`)
+    }
+    public getTypeCant(name: string){
+      return this.http.get(`https://pokeapi.co/api/v2/type/${name}`)
     }
 
   }

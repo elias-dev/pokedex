@@ -1,1 +1,7 @@
-<p>poke-search works!</p>
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Buscar por nombre" [(ngModel)]="nombre" >
+    
+  </mat-form-field>
+  <a  mat-icon-button [routerLink]="['/home/detalles', nombre]" >
+    <mat-icon>search</mat-icon>
+  </a>

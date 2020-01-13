@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PokeHomeRoutingModule } from './poke-home-routing.module';
 import { CoreModule } from './../core/core.module';
 import { MaterialModule } from './../material/material.module';
-
+import { FormsModule } from '@angular/forms';
 import { PokeDetailComponent } from './components/pokedex/poke-detail/poke-detail.component';
 import { PokeSearchComponent } from './components/pokedex/poke-search/poke-search.component';
 import { PokePagerComponent } from './components/pokedex/poke-pager/poke-pager.component';
@@ -15,6 +15,8 @@ import { Config } from './components/pokedex/poke-list/config.service';
 import {MatPaginatorIntl} from '@angular/material/paginator';
 import { ChartsModule } from 'ng2-charts';
 import { PokegraphComponent } from './components/pokegraph/pokegraph.component';
+import { TypeGraphComponent } from './components/pokegraph/type-graph/type-graph.component';
+
 @NgModule({
   declarations: [
     PokeDetailComponent,
@@ -24,6 +26,8 @@ import { PokegraphComponent } from './components/pokegraph/pokegraph.component';
     PokedexComponent,
     PokeListComponent,
     PokegraphComponent,
+    TypeGraphComponent,
+    
     
     
 
@@ -33,7 +37,8 @@ import { PokegraphComponent } from './components/pokegraph/pokegraph.component';
     PokeHomeRoutingModule,
     MaterialModule,
     CoreModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
   providers:[{ provide: MatPaginatorIntl, useClass: Config}]
 })

@@ -23,10 +23,10 @@ export class PokegraphComponent implements OnInit {
     { 
       backgroundColor:["#FF7360", "#6FC8CE", "#FAFFF2", "#FFFCC4", "#B9E8E0",'#d3a5d3','#009688'] 
     }];
-  public doughnutChartData: MultiDataSet = [
+  /*public doughnutChartData: MultiDataSet = [
     this.cantPokemons
 
-  ];
+  ];*/
   public doughnutChartType: ChartType = 'doughnut';
 
   constructor(private pokeServicesService:PokeServicesService) { }
@@ -34,7 +34,6 @@ export class PokegraphComponent implements OnInit {
   ngOnInit() {
     for (let i = 1; i <= this.doughnutChartLabels.length; i++) {
       this.generation(i)
-      
     }
     
   }
@@ -42,7 +41,6 @@ export class PokegraphComponent implements OnInit {
   generation(id:number){
     this.pokeServicesService.getGeneration(id)
     .subscribe((resp:any)=>{
-      console.log(resp.pokemon_species.length);
       this.cantPokemons.push(resp.pokemon_species.length)
     })
     }

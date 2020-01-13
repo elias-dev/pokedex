@@ -61,7 +61,7 @@ ngOnInit() {
       this.loadTypes(this.informacion.types);
     },(e)=>{
       if(e.ok == false){
-        this.router.navigate(['/'])
+        this.router.navigate(['/home/pokedex'])
       }
     })
   });

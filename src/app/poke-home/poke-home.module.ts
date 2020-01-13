@@ -14,6 +14,7 @@ import { PokeListComponent } from './components/pokedex/poke-list/poke-list.comp
 import { Config } from './components/pokedex/poke-list/config.service';
 import {MatPaginatorIntl} from '@angular/material/paginator';
 import { ChartsModule } from 'ng2-charts';
+import { PokegraphComponent } from './components/pokegraph/pokegraph.component';
 @NgModule({
   declarations: [
     PokeDetailComponent,
@@ -22,6 +23,7 @@ import { ChartsModule } from 'ng2-charts';
     PokeHomeComponent,
     PokedexComponent,
     PokeListComponent,
+    PokegraphComponent,
     
     
 

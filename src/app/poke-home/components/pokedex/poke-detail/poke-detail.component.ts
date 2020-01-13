@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ChartDataSets, ChartType, RadialChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { PokeServicesService } from './../../../../core/services/poke-services.service';
 @Component({
   selector: 'app-poke-detail',
@@ -43,18 +43,26 @@ types:any = [];
       this.types.push(element.type.name);
     });
   }
-constructor(private route: ActivatedRoute, private pokeServicesService:PokeServicesService) { 
+constructor(private router:Router,private route: ActivatedRoute, private pokeServicesService:PokeServicesService) { 
 
 }
 
 ngOnInit() {
   this.route.params.subscribe((params: Params)=>{
     const name = params.name;
+    
+    
     this.pokeServicesService.getPokemon(name)
     .subscribe(resp=>{
       this.informacion= resp
+      console.log(resp);
+      
       this.loadStats(this.informacion.stats);
       this.loadTypes(this.informacion.types);
+    },(e)=>{
+      if(e.ok == false){
+        this.router.navigate(['/'])
+      }
     })
   });
 }

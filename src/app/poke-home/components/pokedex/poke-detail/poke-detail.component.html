@@ -1,1 +1,34 @@
-<p>poke-detail works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-ms-4">
+            <mat-card class="card">
+                <mat-card-title>{{informacion.name | titlecase}}</mat-card-title>
+                <mat-card-subtitle>Tipo: {{types }}</mat-card-subtitle>
+                <mat-card-content>
+                    <img mat-card-image [src]="informacion.sprites.front_default">
+
+                        <mat-list>
+
+                            <mat-list-item> Estaura: {{informacion.height /10}} m</mat-list-item>
+                            <mat-list-item> Peso: {{informacion.weight /10}} Kg </mat-list-item>
+                           </mat-list>
+                </mat-card-content>
+            </mat-card>
+    
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8">
+            <div>
+                <div>
+                  <div style="display: block">
+                    <canvas baseChart
+                      [datasets]="radarChartData"
+                      [options]="radarChartOptions"
+                      [labels]="radarChartLabels"
+                      [chartType]="radarChartType">
+                    </canvas>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

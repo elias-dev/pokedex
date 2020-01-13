@@ -13,7 +13,7 @@ import { PokeListComponent } from './components/pokedex/poke-list/poke-list.comp
 
 import { Config } from './components/pokedex/poke-list/config.service';
 import {MatPaginatorIntl} from '@angular/material/paginator';
-
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     PokeDetailComponent,
@@ -23,13 +23,15 @@ import {MatPaginatorIntl} from '@angular/material/paginator';
     PokedexComponent,
     PokeListComponent,
     
+    
 
   ],
   imports: [
     CommonModule,
     PokeHomeRoutingModule,
     MaterialModule,
-    CoreModule
+    CoreModule,
+    ChartsModule
   ],
   providers:[{ provide: MatPaginatorIntl, useClass: Config}]
 })
